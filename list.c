@@ -13,7 +13,10 @@ struct ll_node *ll_head(struct ll_node *head) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Returns the tail (last node) of the linked list
+ * 
+ * @param head pointer to the first node of the linked liat 
+ * @return Pointer to last node, or null if list is empty
  */
 struct ll_node *ll_tail(struct ll_node *head) {
     if (head == NULL)
@@ -26,7 +29,10 @@ struct ll_node *ll_tail(struct ll_node *head) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Returns the number of nodes in the linked list.
+ *
+ * @param head Pointer to the first node of the linked list.
+ * @return The total number of nodes in the list.
  */
 int ll_size(struct ll_node *head) {
    int count = 0;
@@ -39,7 +45,11 @@ int ll_size(struct ll_node *head) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Searches the linked list for a node containing a specific value.
+ *
+ * @param head Pointer to the first node of the linked list.
+ * @param value The value to search for in the list.
+ * @return Pointer to the node containing the value, or NULL if not found.
  */
 struct ll_node *ll_find(struct ll_node *head, int value) {
    struct ll_node *node = head;
@@ -52,7 +62,11 @@ struct ll_node *ll_find(struct ll_node *head, int value) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Converts the linked list into a dynamically allocated array.
+ *
+ * @param head Pointer to the first node of the linked list.
+ * @return Pointer to a newly allocated array containing the list’s values,
+ *         or NULL if the list is empty or allocation fails.
  */
 int *ll_toarray(struct ll_node *head) {
    int size = ll_size(head);
@@ -72,7 +86,10 @@ int *ll_toarray(struct ll_node *head) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Creates a new linked list node with the specified data.
+ *
+ * @param data The integer value to store in the new node.
+ * @return Pointer to the newly created node, or NULL if allocation fails.
  */
 struct ll_node *ll_create(int data) {
    struct ll_node *node = malloc(sizeof(struct ll_node));
@@ -85,7 +102,9 @@ struct ll_node *ll_create(int data) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Frees all nodes in the linked list.
+ *
+ * @param head Pointer to the first node of the linked list.
  */
 void ll_destroy(struct ll_node *head) {
     struct ll_node *node = head;
@@ -97,7 +116,10 @@ void ll_destroy(struct ll_node *head) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Appends a new node with the specified data to the end of the list.
+ *
+ * @param head Pointer to the first node of the linked list.
+ * @param data The integer value to append to the list.
  */
 void ll_append(struct ll_node *head, int data) {
   if (head == NULL)
@@ -110,7 +132,12 @@ void ll_append(struct ll_node *head, int data) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Creates a linked list from an array of integers.
+ *
+ * @param data Pointer to the array of integers.
+ * @param len The number of elements in the array.
+ * @return Pointer to the head of the newly created linked list,
+ *         or NULL if the array is empty or allocation fails.
  */
 struct ll_node *ll_fromarray(int* data, int len) {
     if (data == NULL || len <= 0)
@@ -130,7 +157,11 @@ struct ll_node *ll_fromarray(int* data, int len) {
 }
 
 /**
- * TODO: Describe what the function does
+ * Removes the first node in the list containing the specified value.
+ *
+ * @param head Pointer to the first node of the linked list.
+ * @param value The value of the node to remove.
+ * @return Pointer to the (possibly new) head of the list.
  */
 struct ll_node *ll_remove(struct ll_node *head, int value) {
     if (head == NULL)
